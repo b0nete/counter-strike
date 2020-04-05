@@ -1,0 +1,1 @@
+-noforcemparms -noforcemaccel -noforcemspd -novid -high -tickrate 128 -console -freq 75
