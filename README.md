@@ -79,6 +79,29 @@ You can use the script digitalVibrance.sh located un global-offensive folder. Ju
 
 > ./digitalVibrance 800
 
+
+### Blackbars
+The only one way that i find for this, is editing csgo.sh file.
+Generally located in: ${HOME}/.local/share/Steam/steamapps/common/Counter-Strike\ Global\ Offensive/csgo.sh
+
+Add to the beginning of the file, after to first line.
+>#!/bin/bash
+>
+>#Start black-bars
+xrandr --output HDMI-0 --mode 800x600
+xrandr --output HDMI-0 --set "scaling mode" "Center"
+
+Add to the end of file, before exit.
+>done
+>
+>#Finish black-bars
+xrandr --output HDMI-0 --mode 1920x1080
+xrandr --output HDMI-0 --set "scaling mode" "Full"
+exit $STATUS
+
+* A lot of times, after exit csgo, the blackbars keep appearing.
+For fix this, execute te blackbars-off.sh each time that exit csgo.
+
 ### Save to Startup 
 >Some settings such as nvidia refresh rate/PowerMizer settings might revert to default after reboot.
 To prevent that, we'll add them into our Startup Applications.
